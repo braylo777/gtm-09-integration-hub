@@ -1,0 +1,24 @@
+[package]
+name = "gtm-09-integration-hub"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Grow through the tools customers already use: a step-by-step OAuth 2.0 + PKCE flow checker, Zapier / Make-style template recommendations from connected apps, and partner-sourced vs influenced revenue with integration win-rate lift."
+repository = "https://github.com/braylo777/gtm-09-integration-hub"
+
+[lib]
+crate-type = ["rlib", "cdylib"]
+
+[[bin]]
+name = "gtm-09-integration-hub"
+path = "src/main.rs"
+
+[dependencies]
+serde_json = "=1.0.154"
+sha2 = "=0.10.9"
+
+[profile.release]
+opt-level = "s"
+lto = true
+panic = "abort"
+codegen-units = 1
